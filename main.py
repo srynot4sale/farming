@@ -27,7 +27,7 @@ def main():
         while running:
             # USER INPUT
             deltat = clock.tick(30) # 30fps
-            
+
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
@@ -59,12 +59,6 @@ def main():
             # RENDERING
             screen.fill((100,100,255))
             p.update(deltat, screen)
-    
-    #        text = font.render("Speed: %d" % c.speed, 1, (100, 100, 100))
-    #        screen.blit(text, (10, 10))
-
-    #        text = font.render("Direction: %d" % c.direction, 1, (100, 100, 100))
-    #        screen.blit(text, (10, 30))
 
             text = font.render("X: %d" % p.x, 1, (100, 100, 100))
             screen.blit(text, (10, 50))
