@@ -49,7 +49,7 @@ def main():
                     elif event.key in (pygame.K_DOWN, pygame.K_s):
                         p.queue(p.move_down)
 
-                    elif event.key == pygame.K_ESCAPE:
+                    elif event.key in (pygame.K_ESCAPE, pygame.K_q):
                         running = False
                         break
 
