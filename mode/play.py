@@ -45,5 +45,3 @@ class play(mode.base):
 
         text = self.app.font.render("Y: %d" % self.p.y, 1, (100, 100, 100))
         self.app.screen.blit(text, (10, 70))
-
-        pygame.display.flip()

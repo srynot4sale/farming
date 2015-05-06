@@ -48,7 +48,7 @@ class system(object):
                 # Look for quit events
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
-                        app.stop()
+                        self.stop()
                         break
 
                     self.mode.event(event)
@@ -62,6 +62,8 @@ class system(object):
 
                 if DEBUG:
                     self.mode.debugging()
+
+                pygame.display.flip()
 
         except SystemExit:
             pass
