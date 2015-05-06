@@ -41,15 +41,20 @@ class system(object):
     def run(self):
         try:
             while self.running():
-                # USER INPUT
                 self.deltat = self.clock.tick(30) # 30fps
 
-                self.mode.events(self)
+                # Look for quit events
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        app.stop()
+                        break
+
+                    self.mode.event(event)
 
                 if not self.running():
                     continue
 
-                self.mode.render(self)
+                self.mode.render()
 
         except SystemExit:
             pass

@@ -1,2 +1,3 @@
 class base(object):
-    pass
+
+    app = None
