@@ -57,13 +57,13 @@ class person(pygame.sprite.Sprite):
         self.x += self.increment
         self.direction = RIGHT
 
-    def update(self, deltat, screen):
-
+    def update(self):
         # Do next action in queue
         if len(self.action_queue):
             action = self.action_queue.pop()
             action()
 
+    def render(self, screen):
         self.image = pygame.Surface((self.size, self.size), pygame.SRCALPHA, 32)
         self.image.convert_alpha()
         self.image.blit(self.src_image, (0, 0), (self.sprites[self.direction][0], self.sprites[self.direction][1], self.size, self.size))

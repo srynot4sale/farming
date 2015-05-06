@@ -6,6 +6,8 @@ NAME = "Rylee's game"
 MAX_X = 1024
 MAX_Y = 768
 
+DEBUG = 1
+
 
 class system(object):
 
@@ -54,7 +56,12 @@ class system(object):
                 if not self.running():
                     continue
 
+                self.mode.update()
+
                 self.mode.render()
+
+                if DEBUG:
+                    self.mode.debugging()
 
         except SystemExit:
             pass

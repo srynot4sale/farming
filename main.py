@@ -4,8 +4,6 @@ import pygame
 import system
 import mode.play
 
-DEBUG = 1
-
 
 def main():
     app = system.system()

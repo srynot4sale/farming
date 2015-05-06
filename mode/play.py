@@ -32,17 +32,18 @@ class play(mode.base):
             elif event.key in (pygame.K_ESCAPE, pygame.K_q):
                 self.app.stop()
 
+    def update(self):
+        self.p.update()
+
     def render(self):
-        p = self.p
-        app = self.app
+        self.app.screen.fill((100,100,255))
+        self.p.render(self.app.screen)
 
-        app.screen.fill((100,100,255))
-        p.update(app.deltat, app.screen)
+    def debugging(self):
+        text = self.app.font.render("X: %d" % self.p.x, 1, (100, 100, 100))
+        self.app.screen.blit(text, (10, 50))
 
-        text = app.font.render("X: %d" % p.x, 1, (100, 100, 100))
-        app.screen.blit(text, (10, 50))
-
-        text = app.font.render("Y: %d" % p.y, 1, (100, 100, 100))
-        app.screen.blit(text, (10, 70))
+        text = self.app.font.render("Y: %d" % self.p.y, 1, (100, 100, 100))
+        self.app.screen.blit(text, (10, 70))
 
         pygame.display.flip()
