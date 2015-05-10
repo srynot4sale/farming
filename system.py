@@ -1,7 +1,7 @@
 import pygame
 
 
-NAME = "Rylee's game"
+NAME = "Super Firbys"
 
 MAX_X = 1024
 MAX_Y = 768
@@ -50,6 +50,10 @@ class system(object):
                     if event.type == pygame.QUIT:
                         self.stop()
                         break
+
+                    if hasattr(event, 'key') and event.type == pygame.KEYDOWN and \
+                        event.key in (pygame.K_ESCAPE, pygame.K_q):
+                        self.stop()
 
                     self.mode.event(event)
 
