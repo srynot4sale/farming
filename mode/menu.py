@@ -21,6 +21,7 @@ class menu(mode.base):
     def setup(self, app):
         self.app = app
         self.image['firby_purple'] = pygame.image.load('sprites/firby_purple.jpg')
+        self.image['cartoon_person'] = pygame.image.load('sprites/cartoon_person.jpg')
 
     def event(self, event):
         if not hasattr(event, 'key'):
@@ -72,5 +73,8 @@ class menu(mode.base):
 
         self.rect = self.image['firby_purple'].get_rect()
         self.rect.center = (200, 200)
-
         self.app.screen.blit(self.image['firby_purple'], self.rect)
+
+        self.rect = self.image['cartoon_person'].get_rect()
+        self.rect.center = (600, 600)
+        self.app.screen.blit(self.image['cartoon_person'], self.rect)
